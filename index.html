@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Manager</title>
+  </head>
+  <body>
+    <main>
+      <div class="container-fluid body-container mt-5">
+        <div class="row">
+          <div id="root" class="col-12 col-sm-10 col-lg-8 mx-auto"></div>
+        </div>
+      </div>
+      <div id="modal-content" class="modal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="container-fluid p-3">
+                <div class="row" id="modal-message">
+                </div>
+                <div class="row">
+                  <div class="col-4 ms-auto me-0">
+                    <button id="modal-cancel" class="btn btn-link text-decoration-none">Cancel</button>
+                  </div>
+                  <div class="col-4 ms-0 me-auto">
+                    <button id="modal-confirm" class="btn btn-danger">Ok</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="fixed-bottom">
+      <div class="text-center pt-2">Modularis Inc. 2022</div>
+    </footer>
+    <script type="module" src="/src/main.ts" defer></script>
+  </body>
+</html>

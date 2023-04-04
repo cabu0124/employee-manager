@@ -1,0 +1,19 @@
+body {
+  background-color: #EBEEF2;
+  color: #717171;
+  padding-bottom: 100px;
+}
+
+footer {
+  background-color: #EBEEF2;
+  height: 40px;
+}
+
+.body-container {
+  min-width: 400px;
+}
+
+.row>* {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
