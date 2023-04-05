@@ -24,15 +24,17 @@ const routes: { [key: string]: { viewModel: any, view: () => string } } = {
 }
 
 const router = (container: Element, hash:string, data?:any): void => {
-    
-    const route = routes[hash] || routes["default"];
-    const render = route.view;
-    container.innerHTML  = render();
+    try {
+        const route = routes[hash] || routes["default"];
+        const render = route.view;
+        container.innerHTML  = render();
 
-    if (route.viewModel) {
-        route.viewModel.load(data);
+        if (route.viewModel) {
+            route.viewModel.load(data);
+        }
+    } catch (error) {
+        console.log(error);
     }
-    
 }
 
 export default router;

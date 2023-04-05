@@ -6,11 +6,11 @@ const EmployeeEditView = (): string => {
         </h3>
         <div class="container-fluid bg-white text-body py-4 px-5 rounded-1">
             <div class="row g-3 pb-3">
-                <div class="col-6">
+                <div class="col-6" style="padding-right:5px !important;">
                     <label for="first-name" class="form-label text-secondary fw-bold">FIRST NAME</label>
                     <input id="first-name" type="text" class="form-control" placeholder="Your first name" aria-label="First name">
                 </div>
-                <div class="col-6">
+                <div class="col-6" style="padding-left:5px !important;">
                     <label for="last-name" class="form-label text-secondary fw-bold">LAST NAME</label>
                     <input id="last-name" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
                 </div>

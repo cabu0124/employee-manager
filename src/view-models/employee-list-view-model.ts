@@ -48,7 +48,7 @@ export class EmployeeListViewModel {
         if(!root || !buttonAdd)  throw new Error('Failed to load container element');
         
         buttonAdd.addEventListener("click", () => {
-            router(root, 'edit');
+            this.setNewEmployee(root);
         });
 
         //Set a Click EventListener to All Edit Buttons
@@ -56,7 +56,6 @@ export class EmployeeListViewModel {
             const employeeId = button.getAttribute("data-employeeid");
             if(!root)  throw new Error('Failed to load container element');
             button.addEventListener("click", () => {
-                console.log(`Edit button clicked for employee ${employeeId}`);
                 // Aquí se puede agregar la lógica para editar el empleado correspondiente
                 this.employees.forEach(employee => {
                     if(employee.PersonID == employeeId){
@@ -92,7 +91,6 @@ export class EmployeeListViewModel {
 
                 //Set a Click EventListener to Confirm Delete
                 deleteConfirm.addEventListener("click", () => {
-                    console.log(`Delete confirmed for employee ${employeeId}`);
                     //Call Employee service to delete employee
                     try {
                         const response = this.employeeService.deleteEmployee(employeeId);
@@ -111,6 +109,29 @@ export class EmployeeListViewModel {
                 });
             });
         });
+    }
+
+    private setNewEmployee(root:Element){
+        let employeesNoArr: string[] = [];
+        this.employees.forEach(employee => {
+            employeesNoArr.push(employee.EmployeeNo);
+        });
+        router(root, 'edit', this.generateUniqueNumber(employeesNoArr));
+    }
+
+    private generateUniqueNumber(array: string[]): string {
+        let randomNumber: number;
+        let stringNumber: string;
+        
+        do {
+            // Generate a random number
+            randomNumber = Math.floor(Math.random() * 1000);
+        
+            // Convert the number to a string
+            stringNumber = randomNumber.toString();
+        } while (array.includes(stringNumber)); // Check if the number is already in the array
+        
+        return stringNumber;
     }
 
     //Generate table row

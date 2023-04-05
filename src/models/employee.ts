@@ -8,7 +8,7 @@ export interface Employee {
     EmployeeNo: string;
     EmploymentEndDate: Date;
     EmploymentStartDate: Date;
-    Status: boolean;
+    Status: number;
 }
 
 export function createEmptyEmployee(): Employee {
@@ -22,6 +22,6 @@ export function createEmptyEmployee(): Employee {
       EmployeeNo: "",
       EmploymentEndDate: new Date(),
       EmploymentStartDate: new Date(),
-      Status: false,
+      Status: 0,
     };
   }

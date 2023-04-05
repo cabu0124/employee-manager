@@ -10,5 +10,10 @@ const root = document.querySelector('#root');
 
 if(!root)  throw new Error('Failed to load container element');
 else {
-    window.addEventListener('load', () => router(root, '/'));
+    try {
+        window.addEventListener('load', () => router(root, '/'));
+    } catch (error) {
+        console.log(error);
+    }
+    
 } 
