@@ -19,4 +19,10 @@ This is a Simple page application built with TypeScript that allows users to man
 4. If you don't have a CRUD api to test it you can use the following example api [management-api](https://github.com/Cabu2401/management-api.git).
 5. Start the development server: `npm run dev`
 
+## Contribution
+Contributions are welcome! If you’d like to contribute:
 
+- Fork the repository.
+- Create a new branch (git checkout -b feature/new-feature).
+- Make your changes and commit them (git commit -m 'Add new feature').
+- Submit a pull request.
